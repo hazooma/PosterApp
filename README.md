@@ -32,5 +32,5 @@ The seeded data used to form the current state of the app .
 - `products` represents the products the the company provides either `poster` or `forex` . 
 by default we have 2 products seeded in the databas `{name:"poster",id:1}``{name:"forex",id:2}`
 - `countries` represents the counries the the company can deal with.
-by default we have 4 countries seeded in the database with differend Ids .`{name:"Germany",id:1}`
-`{name:"Italy",id:2}` `{name:"Fraance",id:3}``{name:"Austria",id:4}`
+by default we have 4 countries seeded in the database with differend Ids .`{name:"Germany",id:1}
+{name:"Italy",id:2}{name:"Fraance",id:3}{name:"Austria",id:4}`
