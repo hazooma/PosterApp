@@ -40,3 +40,13 @@ also given data in the task are seeded
 
 - `printers` represents the printers that the company have ,given data in the task are seeded 
 - `orders` represnts the orders done by the company .
+# Endpoints -
+- `localhost:26062/printersInfo` gets all the printers with Info in the systme (GET)
+- `localhost:26062/countries/:id/printers` Get all the printers in a country , remeber the seeded country ids (GET)
+- `localhost:26062/countries/:id/orders` Get all orders that were shipped to a specific country (GET)
+- `localhost:26062/printers/:id/orders` Get orders for specific printer (GET)
+- `localhost:26062/orders` create order (POST)
+
+
+
+
