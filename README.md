@@ -41,13 +41,18 @@ also given data in the task are seeded
 - `printers` represents the printers that the company have ,given data in the task are seeded 
 - `orders` represnts the orders done by the company .
 # Endpoints -
+
 - `localhost:26062/printersInfo` gets all the printers with Info in the systme (GET)
 - `localhost:26062/countries/:id/printers` Get all the printers in a country , remeber the seeded country ids (GET)
 - `localhost:26062/countries/:id/orders` Get all orders that were shipped to a specific country (GET)
 - `localhost:26062/printers/:id/orders` Get orders for specific printer (GET)
-- `localhost:26062/orders` create order (POST)
-input: ` {product_id :the id of product requested ,destination : destination country }` the end point will assign the order to the nearest printer and make an order ! the magic happens here 
-so for example making order with those , `product_id:1` means a `poster` and  `destination:4` which is Austria ! , the app will select the printer number 2 to make it and the order will be issied by it because it takes lkess time to deliver it !
+- `localhost:26062/orders` create order (POST) .
+--------------------------------------------------------------------
+
+ # Make order 
+ input: ` {product_id :the id of product requested ,destination : destination country }` 
+ The end point will assign the order  to the nearest printer and make an order ! the magic happens here 
+	so for example making order with those , `product_id:1` means a `poster` and  `destination:4` which is Austria ! , 	the app will select the printer number 2 to make it and the order will be issied by it because it takes lkess time to 	   deliver it !
 `{
 	"product_id":1,
 	"destination":4
