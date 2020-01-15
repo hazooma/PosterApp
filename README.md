@@ -46,6 +46,7 @@ also given data in the task are seeded
 - `localhost:26062/countries/:id/orders` Get all orders that were shipped to a specific country (GET)
 - `localhost:26062/printers/:id/orders` Get orders for specific printer (GET)
 - `localhost:26062/orders` create order (POST)
+input: ` {product_id :the id of product requested ,destination : destination country }` the end point will assign the order to the nearest printer and make an order ! the magic happens here 
 
 
 
