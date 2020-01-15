@@ -50,9 +50,9 @@ also given data in the task are seeded
 --------------------------------------------------------------------
 
  # Make order 
- input: ` {product_id :the id of product requested ,destination : destination country }` 
- The end point will assign the order  to the nearest printer and make an order ! the magic happens here 
-	so for example making order with those , `product_id:1` means a `poster` and  `destination:4` which is Austria ! , 	the app will select the printer number 2 to make it and the order will be issied by it because it takes lkess time to 	   deliver it !
+ - input: ` {product_id :the id of product requested ,destination : destination country }` .
+ - The end point will assign the order  to the nearest printer and make an order ! the magic happens here 
+ so for example making order with those , `product_id:1` means a `poster` and  `destination:4` which is Austria ! , 	the app will select the printer number 2 to make it and the order will be issied by it because it takes lkess time to 	   deliver it !
 `{
 	"product_id":1,
 	"destination":4
