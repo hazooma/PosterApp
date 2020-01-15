@@ -10,14 +10,12 @@ exports.seed = function(knex) {
           country_id: 1,
           phone: '111-222-3333',
           email: 'zooma@dogpound.com',
-          
         },
         {
           name: 'Bella Italia',
           country_id: 2,
           phone: '111-222-3333',
           email: 'hazem@dogpound.com',
-         
         },
       ]);
     });

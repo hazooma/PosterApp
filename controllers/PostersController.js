@@ -25,7 +25,7 @@ export const getAllPrintersWithCountryInfo = (req, res) => {
 };
 
 export const getAPrinterInfo = (req, res) => {
-  const printer_id = 1;
+  const printer_id = req.params.id;
   knex('printers')
     .where('country_id', '=', printer_id)
     .select('name', 'phone', 'email')
@@ -35,8 +35,8 @@ export const getAPrinterInfo = (req, res) => {
 };
 
 export const makeOrder = (req, res) => {
-  const product_id = 1; // product_id
-  const destination = 1; // country_id
+  const product_id = req.body.product_id; // product_id
+  const destination = req.body.destination; // country_id
 
   knex('printers')
     .join('product_printers', 'printers.id', '=', 'product_printers.printer_id')
@@ -74,7 +74,7 @@ export const makeOrder = (req, res) => {
 };
 
 export const getPrinterOrders = (req, res) => {
-  const printer_id = 1;
+  const printer_id = req.params.id;
   knex('printers')
     .where('printers.id', '=', printer_id)
     .join('orders', 'orders.printer_id', '=', 'printers.id')

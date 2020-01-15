@@ -4,6 +4,7 @@ import {
   getAllPrintersWithCountryInfo,
   makeOrder,
   getPrinterOrders,
+  getAPrinterInfo,
 } from '../controllers/PostersController';
 const router = express.Router();
 
@@ -28,11 +29,11 @@ router.get('/printers', getAllPrinters);
 router.get('/printersInfo', getAllPrintersWithCountryInfo);
 
 // get all printers in a country with id=1 for example
-router.get('/getPrintersInCountry', getAPrinterInfo);
+router.get('/countries/:id/printers', getAPrinterInfo);
 
 // get orders for specific printer
-router.get('/getPrinterOrders', getPrinterOrders);
+router.get('/printers/:id/orders', getPrinterOrders);
 
 // create order
-router.get('/makeOrder', makeOrder);
+router.post('/orders', makeOrder);
 export default router;
