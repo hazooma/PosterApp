@@ -36,6 +36,7 @@ by default we have 4 countries seeded in the database with differend Ids .`{name
 {name:"Italy",id:2}{name:"Fraance",id:3}{name:"Austria",id:4}`
 
 - `delievery_times` represents the time of delivery between two countries 
-also give data in the task are seeded .
--`printers` represents the printers that the company have 
--`orders` represnts the orders done by the company .
+also give data in the task are seeded 
+
+- `printers` represents the printers that the company have 
+- `orders` represnts the orders done by the company .
