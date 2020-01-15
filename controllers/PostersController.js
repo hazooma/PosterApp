@@ -37,6 +37,9 @@ export const getAPrinterInfo = (req, res) => {
 export const makeOrder = (req, res) => {
   const product_id = req.body.product_id; // product_id
   const destination = req.body.destination; // country_id
+  if (!product_id || !destination) {
+    return res.send('Please Provide us with product and destination');
+  }
 
   knex('printers')
     .join('product_printers', 'printers.id', '=', 'product_printers.printer_id')
