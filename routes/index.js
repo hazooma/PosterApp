@@ -5,6 +5,7 @@ import {
   makeOrder,
   getPrinterOrders,
   getAPrinterInfo,
+  getACountryOrders,
 } from '../controllers/PostersController';
 const router = express.Router();
 
@@ -30,6 +31,9 @@ router.get('/printersInfo', getAllPrintersWithCountryInfo);
 
 // get all printers in a country with id=1 for example
 router.get('/countries/:id/printers', getAPrinterInfo);
+
+// get all orders shipped to a specific country
+router.get('/countries/:id/orders', getACountryOrders);
 
 // get orders for specific printer
 router.get('/printers/:id/orders', getPrinterOrders);

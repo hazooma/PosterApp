@@ -4,7 +4,7 @@ import { addDays } from '../helpers/Datehelper';
 export const getAllPrinters = (req, res) => {
   knex
     .from('printers')
-    .select('name', 'phone', 'email', 'country_id')
+    .select('name', 'phone', 'email')
     .then(ans => {
       res.status(200).send(ans);
     });
@@ -78,6 +78,34 @@ export const getPrinterOrders = (req, res) => {
   knex('printers')
     .where('printers.id', '=', printer_id)
     .join('orders', 'orders.printer_id', '=', 'printers.id')
+    .join('products', 'orders.product_id', '=', 'products.id')
+    .join('countries', 'countries.id', '=', 'orders.country_id')
+    .join(
+      'countries AS printerCountry',
+      'printerCountry.id',
+      '=',
+      'printers.country_id'
+    )
+
+    .select(
+      'orders.name as OrderName',
+      'orders.toBeDelivered_At as DeilveredAt',
+      'printers.email as PrinterEmail',
+      'products.name as ProductOrdered',
+      'printers.name as PrinterName',
+      'countries.name as Destination',
+      'printerCountry.name as shippedFrom'
+    )
+    .then(ans => {
+      res.status(200).send(ans);
+    });
+};
+
+export const getACountryOrders = (req, res) => {
+  const country_id = req.params.id;
+  knex('orders')
+    .where('orders.country_id', '=', country_id)
+    .join('printers', 'orders.printer_id', '=', 'printers.id')
     .join('products', 'orders.product_id', '=', 'products.id')
     .join('countries', 'countries.id', '=', 'orders.country_id')
     .join(
